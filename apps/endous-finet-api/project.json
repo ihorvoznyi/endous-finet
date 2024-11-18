@@ -1,0 +1,26 @@
+{
+  "name": "endous-finet-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/endous-finet-api/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "endous-finet-api:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "endous-finet-api:build:development"
+        },
+        "production": {
+          "buildTarget": "endous-finet-api:build:production"
+        }
+      }
+    }
+  }
+}
